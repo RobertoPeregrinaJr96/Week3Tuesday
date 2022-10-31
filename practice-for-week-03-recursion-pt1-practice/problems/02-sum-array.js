@@ -5,38 +5,25 @@ include a mix of positive and negative integers!
 
 
 ***********************************************************************/
-/*
-declare a function with the parameter of arr(array)
-the function should take the argument and add every element together
-return the sum
 
-base case : arr === []
-recursive step : arr[0] -> add the element : arr.shift() -> closer to base case
-recursive case : sumArray(arr.shift())
-*/
+
 //--------------- using for loop --------------------------------------------
 // for(let i = 0; i < arr.length; i++) {
 //   total += arr[i];
 // }
 // return total
 //--------------------------------------------------------------------------
-//000000000000000000000000000000000000000000000000000000000 semi-done
-function sumArray(arr) {
-  let total = 0;
-  if (!arr.length) {
-    return total
-  } else {
-    let sum = arr[0] + sumArray(arr.slice(1))
-    total += sum
-  }
-  return total
-
-  // arr.shift()
-  // //console.log(arr)
-  // sumArray(arr)
-
-  // //console.log(total)
-
+//
+function sumArray(arr, sum = null) {
+      if(arr.length === null) {
+        return []
+      } else if (arr.length === 0) {
+        return sum
+      } else if (arr.length >= 1){
+        sum += arr[0]
+        arr.shift()
+        return sumArray(arr, sum)
+      }
 }
 
 console.log(sumArray([1, 2, 3])); //  6

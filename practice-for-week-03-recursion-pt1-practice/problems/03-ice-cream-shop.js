@@ -19,33 +19,21 @@ falvors.shift() -> to remove the first element to move forward
 recusive base : iceCreamShop(falvors, favorite)
 */
 
-//---------- without recursion-------------------
-// if (flavors.includes(favorite)) {
-//   return true
-// }else {
-//  return false
-// }
-//----------------------------------------------
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX NOT DONE
 function iceCreamShop(flavors, favorite) {
-  let flavor = flavors.shift();
-  //console.log(flavor)
-  if (flavors.shift() === undefined) {
-    return false
- }
- if(flavor === favorite) {
-    return true
-  } else {
-    iceCreamShop(flavors, favorite)
-  }
+    if(flavors.length === 0) {
+      return false
+    } else if(flavors[0].includes(favorite)){
+      return true
+    }
+    return iceCreamShop(flavors.slice(1), favorite)
 
 }
 
 //console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
 console.log(iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea')); // true
-//console.log(iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio')); // false
-//console.log(iceCreamShop(['moose tracks'], 'moose tracks')); // true
-//console.log(iceCreamShop([], 'honey lavender')); // false
+console.log(iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio')); // false
+console.log(iceCreamShop(['moose tracks'], 'moose tracks')); // true
+console.log(iceCreamShop([], 'honey lavender')); // false
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = iceCreamShop;

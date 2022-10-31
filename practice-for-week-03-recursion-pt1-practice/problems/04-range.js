@@ -5,18 +5,7 @@ the start, return an empty array.
 
 
 ***********************************************************************/
-/*
-declare a function with the parameters of start(number) and end(number)
-the function should take the arguments and return an array of elements that are iterations of *end* that begins at *start*
-if the *start* point is greater then the *end* point then return []
 
-
-edge case : start > end -> return empty array
-base case : start === end
-recursive step : (start < end) -> conditional that enables to move forward;
-newArray.push(start) -> the act to reach the base case
-recursive case : range(start + 1, end) -> keeps iterating until it meets the base case
-*/
 //-------------for loop --------------------------------------
 //
 // let newArray = []
@@ -26,26 +15,26 @@ recursive case : range(start + 1, end) -> keeps iterating until it meets the bas
 //   }
 //   return newArray
 //------------------------------------------------------------
-//00000000000000000000000000000000000000000000000 semi-done
-let newArray = [];
-function range(start, end) {
-    if(start > end) {
-      return []
-    }
-    if(start === end) {
-      return newArray
-    } else {
-      newArray.push(start)
-      //console.log(newArray)
-      range(start + 1, end)
-    }
-    return newArray
+
+const range = (start,end, ran = []) => {
+
+  if(start > end ) {
+    return []
+  }
+  if (start === end ){
+    return ran
+  } else if (start <= end) {
+    ran.push(start)
+    start++
+    return range(start,end,ran)
+  }
+  return ran
 }
 
 
-//console.log(range(1, 5)); // [1, 2, 3, 4]
+console.log(range(1, 5)); // [1, 2, 3, 4]
 console.log(range(3, 4)); // [3]
-//console.log(range(7, 6)); // []
+console.log(range(7, 6)); // []
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = range;
