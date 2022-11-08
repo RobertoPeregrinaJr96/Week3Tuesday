@@ -16,22 +16,28 @@ the function should take the argument and return the argument but reversed
 //  }
 //  return arr.join('')
 //-------------------------------------------------
-function reverse(str) {
+// function reverse(str,arr = []) {
+//     let array = str.split("");
+//     if (str.length == 0) return arr.join("");
+//     else {
+//       arr.unshift();
+//       str = array.slice(1);
+//       return reverse(str.join(""), arr);
+//     }
 
-
-}
+// }
 
 //-------- default parameter ----------------------
-// function reverse(str,arr = []) {
-//   let array = str.split('')
-//   if(str.length == 0) {
-//     return arr.join('')
-//   } else {
-//     arr.unshift(array[0])
-//     str = array.slice(1)
-//     return reverse(str.join(''),arr)
-//   }
-// }
+function reverse(str,arr = []) {
+  let array = str.split('')
+  if(str.length == 0) {
+    return arr.join('')
+  } else {
+    arr.unshift(array[0])
+    str = array.slice(1)
+    return reverse(str.join(''),arr)
+  }
+}
 // ----------------------------------------------------
 //------------------------------------------------------
 console.log(reverse("house")); // "esuoh"
