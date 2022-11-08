@@ -15,24 +15,44 @@ of the numerator:
 
 ***********************************************************************/
 
-function exponent(num,power) {
+// function exponent(num, power, i = 0) {
+//     if (power < 0) {
+//         num = 1 / num;
+//         power = -power
+//     }
+//     if (power === 1) return num
+//     if (i + 2 < power) {
+//         num = num * num
+
+//     }
+//     if (i + 2 === power) return num * num
+//     i++
+//     return exponent(num, power, i)
 
 
-}
+
+
+
+
+
+
+
+
+// }
 
 
 //--------------default parameter-----------------------
-// function exponent(num, power, sum = 1) {
-//     if (power == 0) {
-//         return sum
-//     } else if (power < 0) {
-//         sum *= (1 / num)
-//         return exponent(num,power + 1, sum)
-//     } else if (power > 0){
-//         sum *= num
-//         return exponent(num, power - 1, sum)
-//     }
-// }
+function exponent(num, power, sum = 1) {
+    if (power == 0) {
+        return sum
+    } else if (power < 0) {
+        sum *= (1 / num)
+        return exponent(num,power + 1, sum)
+    } else if (power > 0){
+        sum *= num
+        return exponent(num, power - 1, sum)
+    }
+}
 
 
 console.log(exponent(3, 2)); // 9
