@@ -19,16 +19,38 @@ calculate the value and multiply it by itself. So don't cheat and use
 exponentiation in your solution.
 
 ***********************************************************************/
-function advancedExponent(b, n) {
+function exponent(num, power, sum = 1) {
+  if (power == 0) {
+    return sum
+  } else if (power < 0) {
+    sum *= (1 / num)
+    return exponent(num, power + 1, sum)
+  } else if (power > 0) {
+    sum *= num
+    return exponent(num, power - 1, sum)
+  }
+}
+
+function advancedExponent(b, n, num = 0) {
   // Your code here
+  if (n === 0) return 1
+  else if (n === 1) return b
+
+  if (n % 2 === 0) {
+    num = exponent(b, n / 2)
+    return (num * num)
+  } else {
+    num = exponent(b, (n - 1) / 2)
+    return (num * num) * b
+  }
 }
 
 console.log(advancedExponent(2, 0)); // 1
 console.log(advancedExponent(2, 1)); // 2
 console.log(advancedExponent(2, 2)); // 4
 console.log(advancedExponent(2, 3)); // 8
-console.log(advancedExponent(2, 4)); // 16
-console.log(advancedExponent(2, 5)); // 32
+console.log(advancedExponent(2, 4)); // 16 //2 * 2 * 2 * 2
+console.log(advancedExponent(2, 5)); // 32 //2 * 2 * 2 * 2 * 2
 console.log(advancedExponent(2, 6)); // 64
 console.log(advancedExponent(2, 7)); // 128
 console.log(advancedExponent(2, 8)); // 256
