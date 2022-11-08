@@ -6,6 +6,17 @@ the start, return an empty array.
 
 ***********************************************************************/
 
+function range(start, end) {
+
+  if (end < start) return []
+  if (start === end - 1) return [start]
+
+  return [start, ...range(start + 1,end)]
+}
+
+console.log(range(1, 5)); // [1, 2, 3, 4]
+console.log(range(3, 4)); // [3]
+console.log(range(7, 6)); // []
 //-------------for loop --------------------------------------
 //
 // let newArray = []
@@ -42,9 +53,7 @@ the start, return an empty array.
 // }
 //---------------------------------------
 
-console.log(range(1, 5)); // [1, 2, 3, 4]
-console.log(range(3, 4)); // [3]
-console.log(range(7, 6)); // []
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = range;
