@@ -15,22 +15,32 @@ the start, return an empty array.
 //   }
 //   return newArray
 //------------------------------------------------------------
+//-------- default parameter ----------------------
+// const range = (start,end, ran = []) => {
+//   if(start > end ) {
+//     return []
+//   }
+//   if (start === end ){
+//     return ran
+//   } else if (start <= end) {
+//     ran.push(start)
+//     start++
+//     return range(start,end,ran)
+//   }
+//   return ran
+// }
+// //---------------------------------
+// function range(start, end) {
+//   if (start > end) {
+//     return [];
+//   }
+//   if (start === end) {
+//     return [];
+//   }
 
-const range = (start,end, ran = []) => {
-
-  if(start > end ) {
-    return []
-  }
-  if (start === end ){
-    return ran
-  } else if (start <= end) {
-    ran.push(start)
-    start++
-    return range(start,end,ran)
-  }
-  return ran
-}
-
+//   return [start, ...range(start+1, end)];
+// }
+//---------------------------------------
 
 console.log(range(1, 5)); // [1, 2, 3, 4]
 console.log(range(3, 4)); // [3]
