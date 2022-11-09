@@ -7,11 +7,6 @@ change for the given target amount.
 
 Examples:
 
-makeChange(21); // [1, 10, 10]
-makeChange(75); // [25, 25, 25]
-makeChange(33, [15, 3]); // [3, 15, 15]
-makeChange(34, [15, 3]); // null
-makeChange(24, [10, 7, 1]) // [7, 7, 10]
 
 Here's a game plan for solving the problem:
 
@@ -58,6 +53,11 @@ function makeBetterChange(target, coins = [25, 10, 5, 1]) {
 }
 
 
+console.log(makeChange(21)); // [1, 10, 10]
+console.log(makeChange(75)); // [25, 25, 25]
+console.log(makeChange(33, [15, 3])); // [3, 15, 15]
+console.log(makeChange(34, [15, 3])); // null
+console.log(makeChange(24, [10, 7, 1])) // [7, 7, 10]
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = makeBetterChange

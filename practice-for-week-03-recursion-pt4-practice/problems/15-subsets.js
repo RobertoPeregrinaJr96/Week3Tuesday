@@ -13,6 +13,9 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 const subsets = (arr) => {
   // Your code here
   if(arr[0] === undefined) return []
+  if(arr[]){
+    return
+  }
 }
 
 console.log(subsets([])) // [[]]
