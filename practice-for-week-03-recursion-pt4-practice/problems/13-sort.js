@@ -22,26 +22,21 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-    // Your code here
     nums.sort()
-    //console.log(nums)
-    let num = nums.shift()
-    //console.log(num)
-    if(nums.length + 1 <= 1){
-        console.log(sorted)
-        return sorted
-
-    } else {
-        //console.log(sorted)
-         sorted.push(num)
-         //console.log(sorted)
-        sort(nums, sorted)
+    if (nums[0] === undefined) {
+        return []
     }
-    //console.log(sorted)
+    let num = nums.shift()
+    sorted.push(num)
+    if (nums.length === 0) {
+        return sorted
+    } else {
+        return sort(nums, sorted)
+    }
 
 }
-console.log(sort([4,1,6,3,1,7])); // [1, 1, 3, 4, 6, 7]
-//console.log(sort([0, 1, -3])); // [-3, 0, 1]
-//console.log(sort([])); // []
+console.log(sort([4, 1, 6, 3, 1, 7])); // [1, 1, 3, 4, 6, 7]
+console.log(sort([0, 1, -3])); // [-3, 0, 1]
+console.log(sort([])); // []
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = sort;

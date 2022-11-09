@@ -14,13 +14,13 @@ function flatten(arr) {
   debugger
   if (arr.length === 0) return []
 
-  if (arr.length === 2) {
-    let arr2 = arr[1]
-    return typeof arr2 === "object" ? [arr[0], ...flatten(arr2)] : [arr[0],arr2]
-
-  }
   if (arr.length === 1) {
     return arr
+  }
+  if (arr.length === 2) {
+    let arr2 = arr[1]
+    return typeof arr2 === "object" ? [arr[0], ...flatten(arr2)] : [arr[0], arr2]
+
   }
 }
 console.log(flatten([])); // []
