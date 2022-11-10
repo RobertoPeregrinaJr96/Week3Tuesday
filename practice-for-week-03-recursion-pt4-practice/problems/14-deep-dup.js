@@ -17,7 +17,7 @@ array with different memory addresses.
 Write a function, deepDup(arr), that deeply duplicates a given array. Your duplicated array,
 when compared to various indexes of the original array, should evaluate to false like below.
 
-Examples:
+
 
 
 Note:
@@ -30,22 +30,23 @@ console.log(x[0] === y[0]) // true
 
 
 function deepDup(arr) {
-  debugger
+
   // Your code here
   if (arr[0] === undefined) {
-    return false
+    return arr
   } else {
+    ///console.table(arr)
     return deepDup(arr.slice(1))
   }
   // console.log(arr1)
-  debugger
 }
 
 let arr = [[1], [2, [3]]];
 duped = deepDup(arr); // [[1], [2, [3]]]
+console.log(duped[0])
 console.log(arr[0] === duped[0]) // false
 console.log(arr[1] === duped[1]) // false
-console.log(arr[1][1] === duped[1][1]) // false
+//console.log(arr[1][1] === duped[1][1]) // false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

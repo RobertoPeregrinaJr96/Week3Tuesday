@@ -15,45 +15,45 @@ of the numerator:
 
 ***********************************************************************/
 
-// function exponent(num, power, i = 0) {
-//     if (power < 0) {
-//         num = 1 / num;
-//         power = -power
-//     }
-//     if (power === 1) return num
-//     if (i + 2 < power) {
-//         num = num * num
-
-//     }
-//     if (i + 2 === power) return num * num
-//     i++
-//     return exponent(num, power, i)
 
 
-
-
-
-
-
+// function exponent(num,power) {
 
 
 
 // }
 
-
-//--------------default parameter-----------------------
 function exponent(num, power, sum = 1) {
     if (power == 0) {
         return sum
     } else if (power < 0) {
         sum *= (1 / num)
-        return exponent(num,power + 1, sum)
-    } else if (power > 0){
+        return exponent(num, power + 1, sum)
+    } else if (power > 0) {
         sum *= num
         return exponent(num, power - 1, sum)
     }
 }
 
+// function exponent(num, power, i = 0) {
+    //     if (power < 0) {
+        //         num = 1 / num;
+//         power = -power
+//     }
+//     if (power === 1) return num
+//     if (i + 2 < power) {
+//         num = num * num
+//     }
+//     if (i + 2 === power) return num * num
+//     i++
+//     return exponent(num, power, i)
+
+// }
+
+//     } else if (power > 0){
+
+
+//-------------------------------------------------------------------
 
 console.log(exponent(3, 2)); // 9
 console.log(exponent(2, -2)); // 1/4 (or 0.25)
@@ -64,3 +64,21 @@ try {
 } catch (e) {
     module.exports = null;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------default parameter-----------------------

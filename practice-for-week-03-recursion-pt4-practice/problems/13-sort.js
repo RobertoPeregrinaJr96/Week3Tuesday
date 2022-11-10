@@ -22,7 +22,9 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-    nums.sort()
+    nums.sort((a, b) => {
+        return a - b
+    })
     if (nums[0] === undefined) {
         return []
     }
@@ -35,6 +37,26 @@ function sort(nums, sorted = []) {
     }
 
 }
+// //-------------------------------------
+// function sort(nums, sorted = []) {
+//     if(!nums.length) return sorted
+
+//     minNum = Infinity
+//     minIndex = 0
+
+//     for(let i = 0 ; i < nums.length; i++) {
+//         let num = nums[i]
+
+//         if(num < minNum) {
+//             minNum = num
+//             inIndex = 1
+
+//         }
+//     }
+//     sorted.push(minNum)
+//     nums.splice(minIndex,1)
+//     return sort(nums,sorted)
+// }
 console.log(sort([4, 1, 6, 3, 1, 7])); // [1, 1, 3, 4, 6, 7]
 console.log(sort([0, 1, -3])); // [-3, 0, 1]
 console.log(sort([])); // []
