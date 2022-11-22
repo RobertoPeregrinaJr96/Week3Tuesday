@@ -25,12 +25,12 @@ if there is a falsy value present then return null
 // }
 //----------------------------------------------------------
 
-// function sumTon(n){
-//   let sum = n
-//   if(n < 0) return null
-//   else sum +=sumton(n-1)
-//   return sum
-// }
+const sumTon = (n) => {
+  let sum = n
+  if(n < 1) return null
+  else sum += sumTon(n-1)
+  return sum
+}
 // ----------------------------------------------------
 // fucntion sunTon(num) {
 //   if(num === 0) return null
@@ -38,10 +38,10 @@ if there is a falsy value present then return null
 // }
 // */
 
-console.log(sumToN(5)) // returns 15
-console.log(sumToN(1))  // returns 1
-console.log(sumToN(9))  // returns 45
-console.log(sumToN(-8))  // returns null
+console.log(sumTon(5)) // returns 15
+console.log(sumTon(1))  // returns 1
+console.log(sumTon(9))  // returns 45
+console.log(sumTon(-8))  // returns null
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

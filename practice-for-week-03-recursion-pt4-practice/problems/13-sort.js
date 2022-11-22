@@ -21,22 +21,22 @@ sort([0, 1, -3]); // [-3, 0, 1]
 sort([]); // []
 ***********************************************************************/
 
-function sort(nums, sorted = []) {
-    nums.sort((a, b) => {
-        return a - b
-    })
-    if (nums[0] === undefined) {
-        return []
-    }
-    let num = nums.shift()
-    sorted.push(num)
-    if (nums.length === 0) {
-        return sorted
-    } else {
-        return sort(nums, sorted)
-    }
+// function sort(nums, sorted = []) {
+//     nums.sort((a, b) => {
+//         return a - b
+//     })
+//     if (nums[0] === undefined) {
+//         return []
+//     }
+//     let num = nums.shift()
+//     sorted.push(num)
+//     if (nums.length === 0) {
+//         return sorted
+//     } else {
+//         return sort(nums, sorted)
+//     }
 
-}
+// }
 // //-------------------------------------
 // function sort(nums, sorted = []) {
 //     if(!nums.length) return sorted
