@@ -24,13 +24,23 @@ if there is a falsy value present then return null
 //   }
 // }
 //----------------------------------------------------------
-
 const sumTon = (n) => {
-  let sum = n
-  if(n < 1) return null
-  else sum += sumTon(n-1)
+  let sum = 0
+  for (let i = 0; i <= n; i++) {
+    const num = i;
+    sum += i
+  }
   return sum
 }
+
+
+
+// const sumTon = (n) => {
+//   let sum = n
+//   if(n < 1) return null
+//   else sum += sumTon(n-1)
+//   return sum
+// }
 // ----------------------------------------------------
 // fucntion sunTon(num) {
 //   if(num === 0) return null
